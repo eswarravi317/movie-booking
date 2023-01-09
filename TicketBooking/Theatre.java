@@ -40,7 +40,7 @@ public class Theatre {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter no of tickets: ");
 			int noOfTickets = sc.nextInt();
-			if(currentMovie.tickets>0) {
+			if(currentMovie.tickets>noOfTickets) {
 				int[] seats = new int[noOfTickets];
 				for(int i=0; i<noOfTickets; i++) {
 					seats[i] = t.seatNo.get(0);
