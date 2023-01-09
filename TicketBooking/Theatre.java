@@ -15,7 +15,6 @@ public class Theatre {
 	
 	List<Integer> seatNo = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
 	static HashMap<Integer, Customer> bookedCustomer;
-//	static HashMap<Integer, Customer> bookedDetails;
 	
 	Theatre(String movie){
 		movieId = ++id;
@@ -23,11 +22,9 @@ public class Theatre {
 		tickets = 10;
 		price = 500;
 		bookedCustomer = new HashMap<Integer, Customer>();
-//		bookedDetails = new HashMap<Integer, Customer>();
 	}
 	
 	public Theatre() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public void showMovies() {
