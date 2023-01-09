@@ -13,8 +13,9 @@ public class Theatre {
 	int tickets;
 	double price;
 	
-	static List<Integer> seatNo = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
+	List<Integer> seatNo = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
 	static HashMap<Integer, Customer> bookedCustomer;
+//	static HashMap<Integer, Customer> bookedDetails;
 	
 	Theatre(String movie){
 		movieId = ++id;
@@ -22,13 +23,19 @@ public class Theatre {
 		tickets = 10;
 		price = 500;
 		bookedCustomer = new HashMap<Integer, Customer>();
+//		bookedDetails = new HashMap<Integer, Customer>();
 	}
 	
+	public Theatre() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void showMovies() {
 		System.out.println(movie +"-> Total available tickets are "+ tickets);
 	}
 	
 	public static void bookTicket(Theatre currentMovie) {
+		Theatre t = new Theatre();
 		if(currentMovie != null) {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter no of tickets: ");
@@ -36,8 +43,8 @@ public class Theatre {
 			if(currentMovie.tickets>0) {
 				int[] seats = new int[noOfTickets];
 				for(int i=0; i<noOfTickets; i++) {
-					seats[i] = seatNo.get(0);
-					seatNo.remove(0);
+					seats[i] = t.seatNo.get(0);
+					t.seatNo.remove(0);
 				}
 				Customer c = new Customer(noOfTickets, currentMovie.movie, (noOfTickets*currentMovie.price), seats);
 //				bookedDetails.put(currentMovie.movieId, c);
