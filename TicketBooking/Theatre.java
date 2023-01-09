@@ -83,7 +83,6 @@ public class Theatre {
 		for(Integer c: bookedCustomer.keySet()) {
 			if(id == c) {
 				found = true;
-				System.out.println(Arrays.toString(bookedCustomer.get(c).sNumber));
 				for(int i=0; i<bookedCustomer.get(c).sNumber.length; i++) {
 					currentMovie.seatNo.add(bookedCustomer.get(c).sNumber[i]);
 				}
