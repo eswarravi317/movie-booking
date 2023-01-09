@@ -61,6 +61,8 @@ public class Main {
 				int cancelId = sc.nextInt();
 				Theatre.cancelTicket(cancelId, currentMovieForCancel);
 				break;
+			default:
+				return;
 			}
 		}
 		
