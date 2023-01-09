@@ -86,7 +86,7 @@ public class Theatre {
 	public static void cancelTicket(int id, Theatre currentMovie) {
 		boolean found = false;
 		for(Integer c: bookedCustomer.keySet()) {
-			if(id == c) {
+			if(id == c && currentMovie.movie.equals(bookedCustomer.get(c).bookedMovie)) {
 				found = true;
 				for(int i=0; i<bookedCustomer.get(c).sNumber.length; i++) {
 					currentMovie.seatNo.add(bookedCustomer.get(c).sNumber[i]);
